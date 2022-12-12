@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: android;
+    src: url('../pacote-projeto-d010/fontes/idroid.otf');
+}
+
+/* 
+#c5ebd6
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+
+/* pseudo-classe root(todo documento html tem) ~ se equipara a raiz de uma árvore, que representa todo o documento <html>  */
+:root { 
+    --cor0: #c5ebd6; /*variável de nome: cor0 */
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2bb167;
+    --cor4: #1a5c37;
+    --cor5: #0d522b;
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', 'cursive';
+    --fonte-android:  'Android', 'cursive';
+}
+
+/*Seletor com asterisco ~ Seletor universal*/
+/* Seleciona todos os elementos */
+*{
+    margin: 0px; /*Tira a margem e o preenchimento de todos os elementos do documento*/
+    padding: 0px;
+}
+
+
+body{
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after{
+    content: '\00A0\1F517';
+
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px ;
+    text-align: center; /*alinha todos os textos dentro do cabeçalho para o centro*/
+    padding-top: 40px;
+}
+
+/* dentro do "header" modificar o "h1" */
+header > h1 {
+    font-family: var(--fonte-destaque);
+    font-size: 3em ;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 1px 3px 10px rgba(0, 0, 0, 0.637);
+}
+
+header > p {
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 600px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    text-shadow: 1px 3px 10px rgba(0, 0, 0, 0.637);
+    
+}
+
+nav{
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);
+}
+
+nav > a {
+    color: var(--cor0);
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    
+
+}
+
+nav > a:hover{
+    background-color: var(--cor3);
+    color: var(--cor5);
+    border-radius: 5px; /*deixa a luz verde que surge ao passar o mouse sobre a barra de navegação com as bordas aredondadas*/
+    transition-duration: 0.5; /*Quando passar o mouse por cima sobre a barra de duração, a transição da luz verde, dura 0.5 segundos. */
+}
+
+main{
+    background-color: white;
+    min-width: 300px; /*Quando tiver menos de 1000px o conteúdo vai se adaptar*/
+    max-width: 1000px; /*Quando o main chegar a 1000px ele não vai mais crescer*/
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.445);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+/* Todo "h1" que tiver dentro de "main" */
+main h1 { /*configurações válidas para todos os h1 dentro de main*/
+    font-family: android;
+    font-weight: normal;
+    font-size: 2.0;
+    color: var(--cor5)
+}
+
+main h2 {/*configurações válidas para todos os h2 dentro de main*/
+    font-family: var(--fonte-android);
+    font-size: 1.3em;
+    font-weight: normal;
+    color: var(--cor4);
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    /*padding: 4px;*/
+    text-indent: 8px;
+}
+
+main p { /*configurações válidas para todos os parágrafos dentro de main*/
+    margin: 15px 0px ; /*aqui criou uma margem no top e no bottom em todos os parágrafos */
+    text-align: justify;
+    text-indent: 30px; /*endentação de 30px em nos parágrafos*/
+    line-height: 2.0em; /*altura entre uma linha e outra do parágrafo.*/
+    
+}
+
+main strong { /*todo elemento strong dentro de main*/
+    color: var(--cor4);
+    font-weight: bold;
+    /*background-color: var(--cor1);
+    p
+    padding: 2px 8px;*/
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+
+main a:hover{
+    text-decoration: underline;
+    text-decoration-color: red;
+    color: var(--cor4);
+    background-color: yellow;
+}
+
+main img { /*configurações válidas para todas as imagens dentro de main*/
+    width: 100%; /*isso vai fazer com que as imagens dentro do conteúdo principal se espremam e se adapte para caber 100% independente do tamanho da janela*/
+}
+
+main img.pequena{/*configurações válidas para todas as imagens que tiverem a class pequena dentro de main*/
+    max-width: 350px;;
+    display: block; /*imagem por padrão não é um bloco, por isso, foi utilizada a propriedade:display com o valor: block  para transformar a imagem em bloco e assim o margin auto consegue centralizar a imagem*/
+    margin: auto;
+}
+
+
+div.video{
+    background-color: var(--cor5);
+    margin-bottom: 30px;
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 56.5%;
+    position: relative;
+}
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+
+aside{
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.274);
+}
+aside > ul {
+    list-style-position: inside; /*Coloca a bolinha da lista para dentro do verde do elemento aside, por padrão quando a propriedade "list-style-position" não é chamada o elemento é pré configurado como outside */
+    columns: 2; /*Quantidade de colunas em que a lista vai se dividir*/
+    list-style-type: "\2714\00A0\00A0"; /*define o marcador da lista (como um disco, caractere ou  um estilo personalizado) */ /* código de espaço em branco: \00A0 */ /*código do emoji: \2714 */
+}
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px; /*trabalhando com margem negativa*/
+    border-radius: 10px 10px 0px 0px;
+}
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8;
+    padding: 5px;
+}
+
+footer > p > a { /*Todo link que tiver dentro do parágrafo*/
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+    font-size: 0.8;
+}
+footer > p > a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
+
